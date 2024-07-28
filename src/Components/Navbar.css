@@ -1,3 +1,17 @@
 .navbar {
     display: flex;
+    
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 25px;
+    color: red;
+    flex-grow: 1;
+}
+
+a.active {
+    color: black;
 }
