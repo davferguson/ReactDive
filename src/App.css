@@ -7,16 +7,8 @@ header {
 }
 
 .current-page {
-  background-color: blanchedalmond;
   margin: 0 auto;
-  /* min-height: 400px; */
   width: 960px;
   background: url(../public/images/bg-body-footer.png) no-repeat bottom center;
-  /* margin: 0; */
   padding: 0 0 114px;
-}
-.current-page div {
-  background: url(/public/images/bg-body2.png) repeat-y top center;
-  min-height: 400px;
-  padding: 24px 0;
 }
