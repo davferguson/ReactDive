@@ -1,42 +1,37 @@
 const express = require('express')
 const router = express.Router()
+const schemas = require('../models/schemas')
 
-router.get('/users', async (req, res) => {
-
-    // uncomment to pull data from the users table using MongoDB
-    // const users = schemas.Users
-    // const userData = await users.find({}).exec()
-    // if (userData) {
-    //   res.send(JSON.stringify(userData))
-    // }
-  
-    // this data is being used in the Contact form for the dropdown menu
-    // comment this out and uncomment the mongodb above if you wish to
-    // pull data from the database. However, make sure that this data exists
-    // inside of the contact_form table for it to work
-    const userData = 
-    [
-      {
-        "id": 1,
-        "name": "Leanne Graham",
-        "email": "Sincere@april.biz",
-        "website": "hildegard.org"
-      },
-      {
-        "id": 2,
-        "name": "Ervin Howell",
-        "email": "Shanna@melissa.tv",
-        "website": "anastasia.net"
-      },
-      {
-        "id": 3,
-        "name": "Clementine Bauch",
-        "email": "Nathan@yesenia.net",
-        "website": "ramiro.info"
-      }
-    ]
+router.post('/submit-post/:a', async(req, res) => {
+    const {username, title, message, postDate} = req.body
+    const action = req.params.a
     
-    res.send(userData)
+    switch(action) {
+      case "send":
+        const postData = {username: username, title: title, message: message, postDate: postDate}
+        const newPost = new schemas.Posts(postData)
+        const savePost = await newPost.save()
+        if (savePost) {
+          res.send('Post sent. Thank you.')
+        } else {
+          res.send('Failed to send post.')
+        }
+        break;
+  
+        default:
+          res.send('Invalid Request')
+          break
+    }
+  
+    res.end()
+  })
+
+router.get('/posts', async (req, res) => {
+    const posts = schemas.Posts
+    const postData = await posts.find({}).exec()
+    if (postData) {
+      res.send(JSON.stringify(postData))
+    }
   })
   
   module.exports = router

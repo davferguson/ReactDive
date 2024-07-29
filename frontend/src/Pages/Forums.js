@@ -18,26 +18,37 @@ function Forums() {
   },[])
 
   const axiosFetchData = async(processing) => {
-    await axios.get('http://localhost:4000/users')
+    await axios.get('http://localhost:4000/posts')
     .then(res => {
         if (processing) {
           setPostData(res.data)
         }
     })
     .catch(err => console.log(err))
-}
+  }
+
+  const axiosPostData = async() => {
+    const postData = {
+        username: "bIDDLEbOp",
+        title: "How I Took Over",
+        message: post_message
+    }
+
+    await axios.post('http://localhost:4000/submit-post/send', postData)
+    .then(res => console.log(res.data))
+  }
 
   return (
     <div className='forum'>
         <div className="posts">
-            <Post title="Get Out of My Village!" author="JImmy63" message={ post_message } />
-            <Post title="New Bug Found" author="DemonSlayer" />
+          {postData.map(({ _id, username, message, title}) => (
+              <Post key={_id} author={username} title={title} message={message} />
+          ))}
         </div>
         <div className="sidebar">
-            {postData.map(({ id, name, email, website}) => (
-              <Post key={id} author={name} title={website} message={email} />
-            ))}
+            Sidebar
         </div>
+        <button onClick={axiosPostData}>Submit Post</button>
     </div>
   )
 }
