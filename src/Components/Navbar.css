@@ -1,9 +1,69 @@
 .navbar {
-    display: flex;
-    
+    /* height: 147px; */
+    margin: 0 auto;
+    /* margin-top: 100px; */
+    padding: 0px 0 0;
+    position: relative;
+    width: 960px;
+    /* background: url(/public/images/bg-body-header.png) no-repeat top center; */
+    /* z-index: 5; */
+}
+
+.bg-img {
+    /* position: relative; */
+    height: 112px;
+    width: 960px;
+    /* top: 124px; */
+    background: url(/public/images/bg-body-header.png) no-repeat top center;
+}
+
+ ul {
+    background: url(/public/images/bg-navigation.png) no-repeat center center;
+	/* bottom: -107px; */
+    top: -12px;
+	height: 98px;
+	left: 30px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 9px 17px;
+	position: absolute;
+	width: 865px;
+}
+li {
+    display: block;
+    float: left;
+    list-style: none;
+    margin: 0 5px;
+    padding: 0;
 }
 
 a {
+    background: url(/public/images/menu.png) no-repeat;
+    color: #a8a8a8;
+    display: block;
+    font-family: 'Philosopher-Bold';
+    font-size: 16px;
+    font-weight: normal;
+    height: 98px;
+    letter-spacing: 0.07em;
+    line-height: 104px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 163px;
+}
+
+#link2 {
+    background-position: -168px 0;
+}
+
+#link3 {
+    background-position: -335px 0;
+}
+
+/* a {
     text-align: center;
     text-decoration: none;
     font-weight: 700;
@@ -14,4 +74,4 @@ a {
 
 a.active {
     color: black;
-}
+} */

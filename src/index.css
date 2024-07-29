@@ -1,13 +1,23 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
+  background: url(../public/images/bg-body.jpg) repeat;
+  color: #727272;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  margin: 0;
+  min-width: 960px;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+	font-family: 'Philosopher-Regular';
+	src: url('../public/fonts/Philosopher-Regular/Philosopher-Regular.eot');
+	src: url('../public/fonts/Philosopher-Regular/Philosopher-Regular.woff') format('woff'), url('../public/fonts/Philosopher-Regular/Philosopher-Regular.ttf') format('truetype'), url('../public/fonts/Philosopher-Regular/Philosopher-Regular.svg') format('svg');
+}
+@font-face {
+	font-family: 'Philosopher-Bold';
+	src: url('../public/fonts/Philosopher-Bold/Philosopher-Bold.eot');
+	src: url('../public/fonts/Philosopher-Bold/Philosopher-Bold.woff') format('woff'), url('../public/fonts/Philosopher-Bold/Philosopher-Bold.ttf') format('truetype'), url('../public/fonts/Philosopher-Bold/Philosopher-Bold.svg') format('svg');
 }
